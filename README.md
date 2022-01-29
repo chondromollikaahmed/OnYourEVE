@@ -1,29 +1,63 @@
-#OnYourEVE
-##A Event Management System
+<h1 align="center">Welcome to OnYourEVE 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <a href="chondromollikaahmed.github.io/onYourEVE" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/chondromollikaahmed" target="_blank">
+    <img alt="Twitter: chondromollikaahmed" src="https://img.shields.io/twitter/follow/chondromollikaahmed.svg?style=social" />
+  </a>
+</p>
 
-###JavaFX
-
-[//]: # (add banner image)
+> A Event Management System Database Project
 
 <img src="src/main/resources/com/ca/onyoureve/OnYourEVE-logos/OnYourEVE-logos.jpeg">
 
-##Features
-using JavaFX
-using mssql
-using javafx.scene.control
-using javafx.scene.layout
-using javafx.scene.control.cell
-using javafx.scene.control.TableColumn
-using javafx.scene.control.TableView
-using javafx.scene.control.Button
-using javafx.scene.control.TextField
-using javafx.scene.control.TextArea
-using javafx.scene.control.Label
-using javafx.scene.control.Alert
-using javafx.scene.control.Alert.AlertType
-using javafx.scene.control.DatePicker
-using javafx.scene.control.ComboBox
-using javafx.scene.control.ListView
+### 🏠 [Homepage](chondromollikaahmed.github.io/onYourEVE)
 
+### ✨ [Demo](chondromollikaahmed.github.io/onYourEVE)
 
-testing github Copilot
+## Install
+
+```sh
+javac welcome.java
+```
+
+## Usage
+
+```sh
+java welcome.java
+```
+
+## Run tests
+
+```sh
+java -jar welcome.jar
+```
+
+## Author
+
+👤 **Chondromollika Ahmed**
+
+* Website: chondromollikaahmed.github.io/chondromollikaahmed
+* Twitter: [@chondromollikaahmed](https://twitter.com/chondromollikaahmed)
+* Github: [@chondromollikaahmed](https://github.com/chondromollikaahmed)
+* LinkedIn: [@chondromollikaahmed](https://linkedin.com/in/chondromollikaahmed)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/chondromollikaahmed/OnYourEVE/issues). You can also take a look at the [contributing guide](https://github.com/JehadurRE).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+<a href="https://www.patreon.com/chondromollikaahmed">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
+
+***
+_This Project is open source and licensed under MIT License. And  Under Development._So use it at your own risk.

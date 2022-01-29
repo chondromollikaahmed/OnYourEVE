@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mssql-jdbc-10.1.0.jre17-preview">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/mssql-jdbc-10.1.0.jre17-preview.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

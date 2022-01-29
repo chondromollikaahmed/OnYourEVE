@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="welcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WelcomeController">
+   <top>
+      <AnchorPane maxHeight="80.0" maxWidth="400.0" prefHeight="30.0" prefWidth="715.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+
+            <HBox layoutX="14.0" layoutY="6.0" prefHeight="33.0" prefWidth="685.0" spacing="140.0" BorderPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <JFXButton id="raisedButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="2021,All Right Reserved" HBox.hgrow="ALWAYS" />
+                  <JFXButton id="raisedButton" fx:id="termC" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Terms And Condition" HBox.hgrow="ALWAYS" />
+                  <JFXButton id="raisedButton" fx:id="about" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" text="About OnYourEVE" HBox.hgrow="ALWAYS" />
+               </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+            </HBox>
+
+   </bottom>
+   <left>
+      <ImageView fitHeight="305.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@OnYourEVE-logos/OnYourEVE-logos_transparent.png" />
+         </image>
+      </ImageView>
+   </left>
+   <right>
+      <VBox fillWidth="false" maxHeight="300.0" maxWidth="1.7976931348623157E308" minHeight="20.0" minWidth="10.0" prefHeight="300.0" prefWidth="184.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton id="customer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Customer" VBox.vgrow="ALWAYS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Comic Sans MS" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton id="manager" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Manager" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Comic Sans MS" size="16.0" />
+               </font></JFXButton>
+            <JFXButton id="officer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Officer" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Comic Sans MS" size="16.0" />
+               </font></JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="100.0" />
+         </padding>
+      </VBox>
+   </right>
+   <center>
+      <AnchorPane fx:id="loginUI" prefHeight="321.0" prefWidth="234.0" styleClass="loginUI" stylesheets="@style.css" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

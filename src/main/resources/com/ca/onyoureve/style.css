@@ -50,3 +50,24 @@
     -fx-background-radius: 30;
     -fx-opacity: 0.5;
 }
+
+#customerUI
+{
+    -fx-background-color:  linear-gradient(to right top, #a2fbf8, #7fd6d2, #5cb3ae, #39908b, #0c6f69);
+    -fx-background-radius: 30;
+    -fx-opacity: 0.5;
+}
+
+#officerUI
+{
+    -fx-background-color: linear-gradient(to right top, #738989, #566767, #3a4646, #202828, #020a0a);
+    -fx-background-radius: 30;
+    -fx-opacity: 0.5;
+}
+
+.textFCustom
+{
+    -fx-focus-color: #289371;
+    -fx-prompt-text-fill: white;
+    -fx-unfocus-color: white;
+}

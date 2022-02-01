@@ -1,4 +1,4 @@
-package com.ca.onyoureve;
+package com.ca.onyoureve.trialClass;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

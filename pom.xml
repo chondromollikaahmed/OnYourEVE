@@ -38,6 +38,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>16</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,7 +65,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.ca.onyoureve/com.ca.onyoureve.UserInterface</mainClass>
+                            <mainClass>com.ca.onyoureve/com.ca.onyoureve.trialClass.UserInterface</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

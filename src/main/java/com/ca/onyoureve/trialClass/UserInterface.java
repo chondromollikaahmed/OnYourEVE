@@ -1,4 +1,4 @@
-package com.ca.onyoureve;
+package com.ca.onyoureve.trialClass;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

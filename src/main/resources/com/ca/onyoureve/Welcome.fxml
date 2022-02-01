@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -27,7 +26,7 @@
 
    </bottom>
    <left>
-      <ImageView fitHeight="305.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="305.0" fitWidth="297.0" onMouseClicked="#clearView" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@OnYourEVE-logos/OnYourEVE-logos_transparent.png" />
          </image>
@@ -36,7 +35,7 @@
    <right>
       <VBox fillWidth="false" maxHeight="300.0" maxWidth="1.7976931348623157E308" minHeight="20.0" minWidth="10.0" prefHeight="300.0" prefWidth="184.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton id="customer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Customer" VBox.vgrow="ALWAYS">
+            <JFXButton id="customer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#btnCusAction" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Customer" VBox.vgrow="ALWAYS">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -44,11 +43,11 @@
                   <Font name="Comic Sans MS" size="16.0" />
                </font>
             </JFXButton>
-            <JFXButton id="manager" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Manager" VBox.vgrow="ALWAYS">
+            <JFXButton id="manager" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#btn_man_action" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Manager" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Comic Sans MS" size="16.0" />
                </font></JFXButton>
-            <JFXButton id="officer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Officer" VBox.vgrow="ALWAYS">
+            <JFXButton id="officer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#btn_off_action" prefHeight="43.0" prefWidth="145.0" styleClass="gradiantButton" stylesheets="@style.css" text="Officer" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Comic Sans MS" size="16.0" />
                </font></JFXButton>
@@ -59,9 +58,9 @@
       </VBox>
    </right>
    <center>
-      <AnchorPane prefHeight="325.0" prefWidth="234.0" BorderPane.alignment="CENTER">
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="325.0" prefWidth="234.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane id="customerUI" fx:id="loginUI" prefHeight="345.0" prefWidth="234.0" stylesheets="@style.css">
+            <AnchorPane id="customerUI" fx:id="pnl_cus" prefHeight="345.0" prefWidth="234.0" stylesheets="@style.css">
                <children>
                   <VBox prefHeight="332.0" prefWidth="233.0" spacing="20.0">
                      <children>
@@ -72,7 +71,7 @@
                      </padding>
                   </VBox>
                </children></AnchorPane>
-            <AnchorPane fx:id="loginUI1" prefHeight="345.0" prefWidth="234.0" styleClass="loginUI" stylesheets="@style.css">
+            <AnchorPane fx:id="pnl_man" prefHeight="345.0" prefWidth="234.0" styleClass="loginUI" stylesheets="@style.css">
                <children>
                   <VBox prefHeight="332.0" prefWidth="233.0" spacing="20.0">
                      <children>
@@ -88,7 +87,7 @@
                      </padding>
                   </VBox>
                </children></AnchorPane>
-            <AnchorPane id="officerUI" fx:id="loginUI2" prefHeight="345.0" prefWidth="234.0" stylesheets="@style.css">
+            <AnchorPane id="officerUI" fx:id="pnl_off" prefHeight="345.0" prefWidth="234.0" stylesheets="@style.css">
                <children>
                   <VBox prefHeight="332.0" prefWidth="233.0" spacing="20.0">
                      <children>

@@ -1,7 +1,9 @@
 package com.ca.onyoureve;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,15 +24,23 @@ public class WelcomeController implements Initializable {
     private JFXButton termC;
     @javafx.fxml.FXML
     private JFXButton about;
-    @javafx.fxml.FXML
-    private AnchorPane loginUI;
-
+    @FXML
+    private AnchorPane pnl_off;
+    @FXML
+    private AnchorPane pnl_man;
+    @FXML
+    private JFXRadioButton mgr_btn;
+    @FXML
+    private AnchorPane pnl_cus;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         //loginUI.setVisible(false);
+        pnl_cus.setVisible(false);
+        pnl_off.setVisible(false);
+        pnl_man.setVisible(false);
 
     }
 
@@ -160,5 +170,33 @@ public class WelcomeController implements Initializable {
     public void openUrl(ActionEvent actionEvent) throws IOException {
 
         java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://github.com/chondromollikaahmed"));
+    }
+
+    @FXML
+    public void btn_man_action(ActionEvent actionEvent) {
+        pnl_cus.setVisible(false);
+        pnl_off.setVisible(false);
+        pnl_man.setVisible(true);
+    }
+
+    @FXML
+    public void btn_off_action(ActionEvent actionEvent) {
+        pnl_cus.setVisible(false);
+        pnl_off.setVisible(true);
+        pnl_man.setVisible(false);
+    }
+
+    @FXML
+    public void btnCusAction(ActionEvent actionEvent) {
+        pnl_cus.setVisible(true);
+        pnl_off.setVisible(false);
+        pnl_man.setVisible(false);
+    }
+
+    @FXML
+    public void clearView(Event event) {
+        pnl_cus.setVisible(false);
+        pnl_off.setVisible(false);
+        pnl_man.setVisible(false);
     }
 }

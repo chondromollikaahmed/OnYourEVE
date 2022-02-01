@@ -77,6 +77,8 @@ public class PopUpWindowController {
 
         Stage window = new Stage();
         window.setScene(new Scene(root));
+        window.setTitle("OnYourEVE©CA,Terms of Use");
+        window.getIcons().add(new javafx.scene.image.Image("file:src/main/resources/com/ca/onyoureve/images/logo.jpeg"));
         window.show();
         PlayAudio.play();
     }

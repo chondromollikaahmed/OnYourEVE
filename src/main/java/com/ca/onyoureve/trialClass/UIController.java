@@ -68,7 +68,7 @@ public class UIController implements Initializable {
 
     @FXML
     public void Add_users() {
-        conn = ConnectDB.ConnectDb();
+        conn = ConnectDB.ConnectDb(1);
         String sql = "insert into events (eventID,eventName,venueID,mediaID,cateringID,cost)values(?,?,?,?,?,? )";
         try {
             pst = conn.prepareStatement(sql);
@@ -104,7 +104,7 @@ public class UIController implements Initializable {
 
     @FXML
     public void Delete() {
-        conn = ConnectDB.ConnectDb();
+        conn = ConnectDB.ConnectDb(1);
         String sql = "delete from events where eventID = ?";
         try {
             pst = conn.prepareStatement(sql);
@@ -122,7 +122,7 @@ public class UIController implements Initializable {
     @FXML
     public void Edit() {
         try {
-            conn = ConnectDB.ConnectDb();
+            conn = ConnectDB.ConnectDb(1);
             String value1 = text_eid.getText();
             String value2 = text_ename.getText();
             String value3 = text_vid.getText();

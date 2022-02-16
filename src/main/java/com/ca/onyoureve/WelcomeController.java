@@ -2,6 +2,7 @@ package com.ca.onyoureve;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -9,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -32,49 +34,62 @@ public class WelcomeController implements Initializable {
     private JFXRadioButton mgr_btn;
     @FXML
     private AnchorPane pnl_cus;
-
+    @FXML
+    private Label lbl_reg;
+    @FXML
+    private JFXButton customer_sin;
+    @FXML
+    private JFXButton manager_sin;
+    @FXML
+    private JFXButton officer_sin;
+    @FXML
+    private JFXTextField man_id;
+    @FXML
+    private JFXTextField cus_id;
+    @FXML
+    private JFXTextField cus_pass;
+    @FXML
+    private JFXTextField man_pass;
+    @FXML
+    private JFXTextField off_pass;
+    @FXML
+    private JFXTextField off_id;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         //loginUI.setVisible(false);
         pnl_cus.setVisible(false);
         pnl_off.setVisible(false);
         pnl_man.setVisible(false);
-
+        lbl_reg.setVisible(false);
     }
 
     @javafx.fxml.FXML
     public void aboutAction(ActionEvent actionEvent) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-
         toPopUp("About OnYourEVE", "Author: OnYourEVE\nVersion: 1.0\nCopyright: Copyright © 2022 OnYourEVE. All rights reserved.\n\n" +
                 "This program is free software: you can redistribute it and/or modify\n" +
                 "it under the terms of the GNU General Public License as published by\n" +
                 "public repository link: https://github.com/chondromollikaahmed/OnYourEVE");
     }
 
-    private void toPopUp(String about_us, String s,String url) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-
+    private void toPopUp(String about_us, String s, String url) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("PopUpWindow.fxml"));
-        Parent root =loader.load();
+        Parent root = loader.load();
         PopUpWindowController controller = loader.getController();
-        controller.setContent(about_us, s,url);
-
+        controller.setContent(about_us, s, url);
         Stage window = new Stage();
         window.setScene(new Scene(root));
         window.initStyle(StageStyle.UNDECORATED);
         window.show();
         PlayAudio.play();
-
     }
 
     private void toPopUp(String about_us, String s) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        toPopUp(about_us,s,null);
+        toPopUp(about_us, s, null);
     }
 
     @FXML
     public void termCAction(ActionEvent actionEvent) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-
         toPopUp("OnYourEVE", "Terms and Conditions\n" +
                 "Last updated: February 01, 2022\n" +
                 "Please read these terms and conditions carefully before using Our Service.\n" +
@@ -163,12 +178,11 @@ public class WelcomeController implements Initializable {
                 "\n" +
                 "\n" +
                 "By visiting this page on our website: www.onyoureve.cf\n" +
-                "\n" ,"https://www.termsfeed.com/live/f6b3b136-0828-4f77-9a76-4fbea410a85f");
+                "\n", "https://www.termsfeed.com/live/f6b3b136-0828-4f77-9a76-4fbea410a85f");
     }
 
     @FXML
     public void openUrl(ActionEvent actionEvent) throws IOException {
-
         java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://github.com/chondromollikaahmed"));
     }
 
@@ -177,6 +191,7 @@ public class WelcomeController implements Initializable {
         pnl_cus.setVisible(false);
         pnl_off.setVisible(false);
         pnl_man.setVisible(true);
+        lbl_reg.setVisible(false);
     }
 
     @FXML
@@ -184,6 +199,7 @@ public class WelcomeController implements Initializable {
         pnl_cus.setVisible(false);
         pnl_off.setVisible(true);
         pnl_man.setVisible(false);
+        lbl_reg.setVisible(false);
     }
 
     @FXML
@@ -191,6 +207,7 @@ public class WelcomeController implements Initializable {
         pnl_cus.setVisible(true);
         pnl_off.setVisible(false);
         pnl_man.setVisible(false);
+        lbl_reg.setVisible(true);
     }
 
     @FXML
@@ -198,5 +215,22 @@ public class WelcomeController implements Initializable {
         pnl_cus.setVisible(false);
         pnl_off.setVisible(false);
         pnl_man.setVisible(false);
+    }
+
+
+    public boolean checkInputs(JFXTextField id,JFXTextField pass) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+        // null values
+        if (id == null || pass == null) {
+            toPopUp("Invalid Input", "Please fill all the fields.");
+            return false;
+        }
+
+        // empty values
+        if (id.getText().isEmpty() || pass.getText().isEmpty()) {
+            toPopUp("Invalid Input", "Please fill all the fields.");
+            return false;
+        }
+
+        return true;
     }
 }

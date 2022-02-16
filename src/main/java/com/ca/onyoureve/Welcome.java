@@ -1,11 +1,12 @@
-
-
 /*
- * Copyright (c) 2022. Chondromollika Ahmed ,All Right Reserved consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
+ * *
+ *  * Created by Chondromollika Ahmed on 2/14/22, 5:51 PM
+ *  *chondromollikaahmed@gmail.com
+ *  * Copyright (c) 2022 . All rights reserved.
+ *  * Last modified 2/2/22, 9:53 PM
+ *  *Current Path E:/OnYourEVE/src/main/java/com/ca/onyoureve/Welcome.java
+ *  *OnYourEVE
+ *
  */
 
 package com.ca.onyoureve;

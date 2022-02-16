@@ -71,3 +71,8 @@
     -fx-prompt-text-fill: white;
     -fx-unfocus-color: white;
 }
+
+.whiteBG
+{
+    -fx-background-color: white;
+}

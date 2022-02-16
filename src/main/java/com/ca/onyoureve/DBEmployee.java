@@ -19,7 +19,7 @@ public class DBEmployee {
 
     public Employee getEmployee(String id) {
         try {
-            Connection conn = ConnectDB.ConnectDb(sqlType)
+            Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - getting an employee");
                 String query = "select * from employee where employee_id = " + id;  // query to be sent
@@ -81,7 +81,7 @@ public class DBEmployee {
     }
 
     public void removeEmployee(String id) {
-        try{
+        try {
             Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - removing employee");
@@ -97,459 +97,256 @@ public class DBEmployee {
         }
     }
 
-
     public void changeManager(String emp_id, String mgr_id) {
-        try
-        {
+        try {
             Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - changing manager id");
-
                 String query = "UPDATE EMPLOYEE SET mgr_id = " + mgr_id + " WHERE employee_id = " + emp_id;
-
                 conn.prepareStatement(query).execute();
-            }
-
-            else {
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
-
-
     public void updateField(String id, String field, String new_value, boolean isNumeric) {
-        try
-        {
+        try {
             Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - updating employee field");
-
                 String query = new String();
-
                 if (!isNumeric)
                     query = "update EMPLOYEE set " + field + " = '" + new_value + "' where employee_id = " + id;
                 else
                     query = "update EMPLOYEE set " + field + " = " + new_value + " where employee_id = " + id;
-
                 conn.prepareStatement(query).execute();
-            }
-
-            else {
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
-
-
-
     ///
-
-
     ////
     //////
 
     // Returns true if password correct against that id, false otherwise
     public boolean employeeLogin(String id, String pass) {
-        try
-        {
+        try {
             Connection conn = ConnectDB.ConnectDb(sqlType);
-            if (conn != null)
-            {
-                System.out.println("Database - attemptingg employee login");
-
+            if (conn != null) {
+                System.out.println("Database - attempting employee login");
                 String query = "select * from EMPLOYEEPASS where emplyee_id = " + id;  // query to be sent
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
+                ResultSet rs = conn.prepareStatement(query).executeQuery();
                 String db_pass = "";
-
                 while (rs.next()) {
                     db_pass = rs.getString("password");
                 }
-
                 if (pass.equals(db_pass))
                     return true;
-            }
-
-            else
-            {
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return false;
     }
 
     // Returns true if password changed successfully, false otherwise
     public boolean changeEmployeePassword(String id, String old_pass, String new_pass) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
+        try {
+            Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - changing employee password");
-
-                String query = "update EMPLOYEEPASS set PASSWORD = " + new_pass + " where EMP_ID = " + id + " and PASSWORD = " + old_pass;
-
-                Statement stmt = conn.createStatement();
-                stmt.executeUpdate(query);
-
-                query = "commit";
-                stmt.executeUpdate(query);
-
+                String query = "update EMPLOYEEPASS set PASSWORD = " + new_pass + " where EMPloyee_ID = " + id + " and PASSWORD = " + old_pass;
+                conn.prepareStatement(query).execute();
                 return true;
-            }
-
-            else {
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return false;
     }
 
     public void deletePasswordRecord(String id) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
+        try {
+            Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - deleting employee password record");
-
-                String query = "delete from EMPLOYEEPASS where EMP_ID = " + id;  // selects all data from database
-
-                Statement stmt = conn.createStatement();
-                stmt.executeUpdate(query);
-
-                query = "commit";
-                stmt.executeUpdate(query);
-            }
-
-            else {
+                String query = "delete from EMPLOYEEPASS where employee_ID = " + id;  // selects all data from database
+                conn.prepareStatement(query).executeUpdate();
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     // Default password is same as emp_id when employee is created
     public void addPasswordRecord(String id, String pass) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
+        try {
+            Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - adding employee password record");
-
-                Statement stmt = conn.createStatement();
-
-                String query = "insert into EMPLOYEEPASS(EMP_ID, PASSWORD)" + "values('" + id + "','" + pass + "')";
-                //System.out.println(query);
-                stmt.executeUpdate(query);
-                stmt.executeUpdate("commit");
-            }
-
-            else {
+                String query = "insert into EMPLOYEEPASS(EMPloyee_ID, PASSWORD)" + "values('" + id + "','" + pass + "')";
+                conn.prepareStatement(query).execute();
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    // Getting points against an id
-    public int getPoints(String id) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
-            if (conn != null)
-            {
-                System.out.println("Database - retrieving employee points");
-
-                String query = "select points from employee where emp_id = " + id;  // query to be sent
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
-                while (rs.next())
-                {
-                    return rs.getInt("points");
-                }
-            }
-
-            else {
-                System.out.println("Failed to make connection!");
-            }
-        }
-
-        catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return 0;
     }
 
     public boolean isManager(String id) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
-            if (conn != null)
-            {
+        try {
+            Connection conn = ConnectDB.ConnectDb(sqlType);
+            if (conn != null) {
                 System.out.println("Database - checking if employee is a manager");
-
                 String query = "select mgr_id from employee";  // query to be sent
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
-                while (rs.next())
-                {
+                ResultSet rs = conn.prepareStatement(query).executeQuery();
+                while (rs.next()) {
                     String mgr_id = rs.getString("mgr_id");
-
                     if (mgr_id != null) {
                         if (mgr_id.equals(id))
                             return true;
                     }
                 }
-            }
-
-            else {
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return false;
     }
 
-    public ArrayList<Employee> getAllEmployees()
-    {
+    public ArrayList<Employee> getAllEmployees() {
         ArrayList<Employee> employeeList = new ArrayList<Employee>();
-
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
-            if (conn != null)
-            {
+        try {
+            Connection conn = ConnectDB.ConnectDb(sqlType);
+            if (conn != null) {
                 System.out.println("Database - getting list of all employees");
-
                 String query = "select * from employee";  // query to be sent
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
-                while (rs.next())
-                {                                                                   // reads a row
-                    String name = rs.getString("name");                  // finds a column in the row
+                ResultSet rs = conn.prepareStatement(query).executeQuery();
+                while (rs.next()) {
+                    // reads a row
+                    String name = rs.getString("name");             // finds a column in the row
                     String dob = rs.getString("dob");
                     String phone = rs.getString("phone_no");
                     String email = rs.getString("email");
-                    String cnic = rs.getString("cnic");
-                    String acc = rs.getString("account_number");
-                    String wt = rs.getString("wage_type");
-                    String wr = rs.getString("wage_rate");
-                    String id = rs.getString("emp_id");
+                    String nid = rs.getString("nid");
+                    String acc = rs.getString("acc_no");
+                    String emp_type = rs.getString("emp_type");
+                    String salary_rate = rs.getString("salary_rate");
+                    String address = rs.getString("address");
                     String mid = rs.getString("mgr_id");
-                    int points = rs.getInt("points");
-
-                    Employee emp = new Employee(id, name, dob, phone, email, cnic,  acc, wt, Integer.parseInt(wr), points, mid);
+                    String id = rs.getString("emp_id");
+                    Employee emp = new Employee(id, name, dob, phone, email, nid, acc, emp_type, Integer.parseInt(salary_rate), address, mid);
                     employeeList.add(emp);
                 }
-            }
-
-            else {
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return employeeList;
     }
 
     public String insertEmployee(Employee emp) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
+        try {
+            Connection conn = ConnectDB.ConnectDb(sqlType);
             if (conn != null) {
                 System.out.println("Database - inserting an employee object");
-
-                String query = "select * from employee";  // selects all data from database
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
-                String last_id = "10000";
-
-                while (rs.next()) {                                            // reads a row
-                    last_id = rs.getString("emp_id");             // reads an id
+                String sql = "insert into employee( name, dob, phone_no, email, nid, acc_no, emp_type, salary_rate, address, mgr_id) values(?,?,?,?,?,?,?,?,?,?)";
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, emp.getName());
+                pstmt.setString(2, emp.getDob());
+                pstmt.setString(3, emp.getPhone_no());
+                pstmt.setString(4, emp.getEmail());
+                pstmt.setString(5, emp.getNid());
+                pstmt.setString(6, emp.getAcc_no());
+                pstmt.setString(7, emp.getEmp_type());
+                pstmt.setInt(8, emp.getSalary_rate());
+                pstmt.setString(9, emp.getAddress());
+                pstmt.setString(10, emp.getMgr_id());
+                pstmt.executeUpdate();
+                String sql2 = "select employee_id from employee where email = ?";
+                PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+                pstmt2.setString(1, emp.getEmail());
+                ResultSet rs = pstmt2.executeQuery();
+                String id = "";
+                while (rs.next()) {
+                    id = rs.getString("employee_id");
                 }
-
-                int temp = Integer.parseInt(last_id);
-                temp++;
-                String new_id = Integer.toString(temp);
-
-                emp.setEmployee_id(new_id);
-
-                query = "insert into employee(emp_id, name, dob, email, phone_no, cnic, account_number, wage_type, wage_rate, points, mgr_id)" +
-                        "values('" + emp.getEmployee_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
-                        "','" + emp.getPhone_no() + "','" + emp.getCnic() + "','" + emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," + Integer.toString(emp.getPoints()) + ",'" + emp.getMgr_id() + "')";
-
-                System.out.println(query);
-                stmt.executeUpdate(query);
-                stmt.executeUpdate("commit");
-
-                this.addPasswordRecord(emp.getEmployee_id(), emp.getEmployee_id());
-
-                return new_id;
-            }
-
-            else {
+                return id;
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return "";
     }
 
     public Employee getEmployeeByEmail(String email) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Globals.getDb_name(), Globals.getDb_username(), Globals.getDb_pass());
-        )
-        {
-            if (conn != null)
-            {
+        try {
+            Connection conn = ConnectDB.ConnectDb(sqlType);
+            if (conn != null) {
                 System.out.println("Database - getting an employee by email");
-
                 String query = "select * from employee where email = '" + email + "'";  // query to be sent
-
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
-
-                while (rs.next())
-                {                                            // reads a row
+                while (rs.next()) {                                            // reads a row
                     String name = rs.getString("name");             // finds a column in the row
                     String dob = rs.getString("dob");
                     String phone = rs.getString("phone_no");
-                    String cnic = rs.getString("cnic");
-                    String acc = rs.getString("account_number");
-                    String wt = rs.getString("wage_type");
-                    String wr = rs.getString("wage_rate");
-                    int points = rs.getInt("points");
+                    String nid = rs.getString("nid");
+                    String acc = rs.getString("acc_no");
+                    String emp_type = rs.getString("emp_type");
+                    String salary_rate = rs.getString("salary_rate");
+                    String address = rs.getString("address");
                     String mid = rs.getString("mgr_id");
                     String id = rs.getString("emp_id");
-
-                    Employee emp = new Employee(id, name, dob, phone, email, cnic, acc, wt, Integer.parseInt(wr), points, mid);
+                    Employee emp = new Employee(id, name, dob, phone, email, nid, acc, emp_type, Integer.parseInt(salary_rate), address, mid);
                     return emp;
                 }
-            }
-
-            else
-            {
+            } else {
                 System.out.println("Failed to make connection!");
             }
-        }
-
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         Employee emptyObj = new Employee();
         return emptyObj;
     }
-}
-
-
-
-
-
-
 }

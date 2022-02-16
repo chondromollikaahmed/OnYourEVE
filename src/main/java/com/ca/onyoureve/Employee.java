@@ -218,7 +218,7 @@ public class Employee {
 
     public void editEmployee() {
         DBEmployee obj = new DBEmployee();
-        obj.editEmployee(this.employee_id);
+     //  obj.editEmployee(this.employee_id);
     }
     // Employee logging in
 

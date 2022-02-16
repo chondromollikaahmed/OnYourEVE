@@ -40,7 +40,7 @@ add constraint fk_customer_id foreign key (customer_id) references customer(cust
 
 
 create table employee (
-                          employee_id char(5) PRIMARY KEY,
+                          employee_id char(5) AUTO_INCREMENT PRIMARY KEY,
                           name varchar(30),
                           dob date,
                           phone_no varchar(30),

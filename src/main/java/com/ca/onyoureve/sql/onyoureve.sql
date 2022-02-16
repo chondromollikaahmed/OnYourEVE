@@ -78,3 +78,107 @@ create table employeepass
 
 alter table employeepass
     add constraint fk_employee_id foreign key (employee_id) references employee (employee_id);
+
+
+
+create table media_requirements (
+                                    media_id int AUTO_INCREMENT PRIMARY KEY,
+                                    photography tinyint,
+                                    videography tinyint,
+                                    album tinyint,
+                                    drone tinyint,
+                                    crane tinyint
+);
+
+
+create table catering (
+                          catering_id int auto_increment PRIMARY KEY,
+                          name varchar(30),
+                          contact varchar(30),
+                          specialty varchar(30),
+                          days numeric(38,0),
+                          charges numeric(38,0)
+);
+
+
+
+create table menu (
+                      menu_id int auto_increment PRIMARY KEY,
+                      rice varchar(100),
+                      bread varchar(100),
+                      protein varchar(100),
+                      coke tinyint,
+                      miranda tinyint,
+                      sprite tinyint,
+                      water tinyint,
+                      dryfruit tinyint,
+                      sugarfree tinyint,
+                      icecream tinyint,
+                      cake tinyint,
+                      cost numeric(38,0)
+);
+
+
+
+create table studio (
+                        studio_id int auto_increment PRIMARY KEY,
+                        name varchar(30),
+                        contact_info varchar(30),
+                        cost numeric(38,0)
+);
+
+
+create table venue (
+                       venue_id int auto_increment PRIMARY KEY,
+                       name varchar(20),
+                       location varchar(50),
+                       address varchar(100),
+                       max_capacity numeric(38,0),
+                       description varchar(200),
+                       category varchar(30),
+                       contact_info varchar(30),
+                       cost numeric(38,0)
+);
+
+
+
+
+drop table event;
+create table event
+(
+    event_id      int auto_increment PRIMARY KEY,
+    name          varchar(30),
+    type          varchar(30),
+    event_date    date,
+    guests        numeric,
+    total_cost    numeric,
+    starting_time varchar(30),
+    ending_time   varchar(30),
+    cust_id       int,
+    venue_id      int,
+    studio_id     int,
+    menu_id       int,
+    catering_id   int,
+    media_id      int,
+    approved      tinyint
+);
+
+
+
+ALTER TABLE event
+    ADD FOREIGN KEY (cust_id) REFERENCES customer (customer_id);
+
+ALTER TABLE event
+    ADD FOREIGN KEY (venue_id) REFERENCES venue (venue_id);
+
+ALTER TABLE event
+    ADD FOREIGN KEY (studio_id) REFERENCES studio (studio_id);
+
+ALTER TABLE event
+    ADD FOREIGN KEY (menu_id) REFERENCES menu (menu_id);
+
+ALTER TABLE event
+    ADD FOREIGN KEY (catering_id) REFERENCES catering (catering_id);
+
+ALTER TABLE event
+    ADD FOREIGN KEY (media_id) REFERENCES media_requirements (media_id);

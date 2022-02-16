@@ -25,7 +25,7 @@
                   <Image url="@images/Customer_View_Event2.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="243.0" layoutY="14.0" style="-fx-font-size: 100; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="ViewYourEvent" textFill="WHITE" AnchorPane.topAnchor="10.0">
+            <Label layoutX="243.0" layoutY="14.0" style="-fx-font-size: 80; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="ViewYourEvent" textFill="WHITE" AnchorPane.topAnchor="10.0">
                <effect>
                   <DropShadow />
                </effect>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="519.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.LoginUIController">
+   <children>
+      <HBox prefHeight="88.0" prefWidth="519.0" spacing="20.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="79.0" prefWidth="480.0" spacing="20.0" style="-fx-background-color: #f5feff;">
+               <children>
+                  <Button fx:id="button_toshow" mnemonicParsing="false" onAction="#showLogUI" prefHeight="31.0" prefWidth="309.0" style="-fx-background-color: transparent; -fx-text-fill: Black; -fx-border-width: 0px 0px 3px 0px; -fx-border-color: #bff0f5; -fx-font-weight: bold;" text="Already Have A License Key ? Sign IN">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="buttonBuy" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#ShowBuyNow" style="-fx-background-color: transparent; -fx-text-fill: Black; -fx-border-width: 0px 0px 3px 0px; -fx-border-color: #bff0f5; -fx-font-weight: bold;" text="Buy NOW">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+      <AnchorPane id="logo" fx:id="pnl_logo" layoutY="148.0" prefHeight="368.0" prefWidth="519.0" stylesheets="@style.css">
+         <children>
+            <ImageView id="logoimage" fx:id="ijkl" fitHeight="318.0" fitWidth="412.0" layoutX="101.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="pane_signin" fx:id="pnl_login" layoutY="148.0" prefHeight="368.0" prefWidth="519.0" stylesheets="@style.css">
+         <children>
+            <PasswordField layoutX="297.0" layoutY="138.0" />
+            <Label layoutX="156.0" layoutY="65.0" prefHeight="39.0" prefWidth="117.0" text="UserName" textFill="WHITE">
+               <font>
+                  <Font name="Ink Free" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="297.0" layoutY="72.0" />
+            <Label layoutX="156.0" layoutY="131.0" prefHeight="39.0" prefWidth="117.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="Ink Free" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="216.0" layoutY="263.0" mnemonicParsing="false" text="Sign IN AS ADMIN">
+               <textFill>
+                  <LinearGradient endX="0.8170347123492029" endY="1.0" startX="0.8769716208665528" startY="0.16719244105582737">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.6578947305679321" green="0.39189407229423523" blue="0.39189407229423523" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5228310502283106">
+                           <color>
+                              <Color red="0.7894737124443054" green="0.10964912176132202" blue="0.3249269127845764" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5776255707762558">
+                           <color>
+                              <Color red="0.7799999713897705" green="0.10920000076293945" blue="0.32161998748779297" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.24907949566841125" green="0.605010449886322" blue="0.8771929740905762" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               
+            </Button>
+            <TextField layoutX="297.0" layoutY="184.0" />
+            <Label layoutX="156.0" layoutY="177.0" prefHeight="39.0" prefWidth="117.0" text="License" underline="true">
+               <font>
+                  <Font name="Ink Free" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="buynow" fx:id="pnl_buy" layoutY="148.0" prefHeight="368.0" prefWidth="519.0" stylesheets="@style.css" />
+   </children>
+</AnchorPane>

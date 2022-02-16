@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<BorderPane prefHeight="561.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WebViewController">
+   <center>
+      <WebView fx:id="wview" layoutX="13.0" layoutY="13.0" prefHeight="536.0" prefWidth="471.0" />
+   </center>
+</BorderPane>

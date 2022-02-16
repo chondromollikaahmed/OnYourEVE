@@ -9,7 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane id="welcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WelcomeController">
+<BorderPane id="welcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WelcomeController">
    <top>
       <AnchorPane maxHeight="80.0" maxWidth="400.0" prefHeight="30.0" prefWidth="715.0" BorderPane.alignment="CENTER">
          <children>

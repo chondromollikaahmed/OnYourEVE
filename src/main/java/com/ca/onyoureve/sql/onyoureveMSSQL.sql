@@ -1,3 +1,5 @@
+
+
 /*
  * *
  *  * Created by Chondromollika Ahmed on 2/16/22, 10:08 AM
@@ -12,17 +14,17 @@
 
 drop database if exists onyoureve;
 
-show databases;
-create database if not exists onyoureve;
+SELECT * FROM SYS.DATABASES
+create database  onyoureve;
 use onyoureve;
 
 create table customer
 (
-    customer_id       int AUTO_INCREMENT PRIMARY KEY,
+    customer_id       int IDENTITY(1,1) PRIMARY KEY,
     name              varchar(30),
     email             varchar(20),
     phone_no          varchar(30),
-    age               double,
+    age               float,
     address           varchar(30),
     nid               varchar(30),
     membership_status numeric(20, 0),
@@ -33,8 +35,7 @@ create table customer
 
 ALTER TABLE customer
     ADD CONSTRAINT emailvalidation
-        CHECK (email REGEXP
-               "^[a-zA-Z0-9][a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]*?[a-zA-Z0-9._-]?@[a-zA-Z0-9][a-zA-Z0-9._-]*?[a-zA-Z0-9]?\\.[a-zA-Z]{2,63}$");
+        CHECK (email LIKE '%_@_%._%');
 
 create table customerpass
 (
@@ -51,7 +52,7 @@ alter table customerpass
 
 create table employee
 (
-    employee_id int AUTO_INCREMENT PRIMARY KEY,
+    employee_id int IDENTITY(1,1) PRIMARY KEY,
     name        varchar(30),
     dob         date,
     phone_no    varchar(30),
@@ -61,14 +62,12 @@ create table employee
     emp_type    varchar(10),
     salary_rate numeric(10),
     address     numeric(10),
-    mgr_id      char(5) REFERENCES employee (employee_id)
+    mgr_id      int REFERENCES employee (employee_id)
 );
 
 alter table employee
-    add constraint emailvalidation
-        CHECK (email REGEXP
-               "^[a-zA-Z0-9][a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]*?[a-zA-Z0-9._-]?@[a-zA-Z0-9][a-zA-Z0-9._-]*?[a-zA-Z0-9]?\\.[a-zA-Z]{2,63}$");
-
+    add constraint emailvalidationemployee
+        CHECK (email LIKE '%_@_%._%');
 
 create table employeepass
 (

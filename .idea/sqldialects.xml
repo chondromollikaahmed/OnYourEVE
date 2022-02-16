@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ca/onyoureve/sql/onyoureve.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ca/onyoureve/sql/onyoureveMSSQL.sql" dialect="TSQL" />
+    <file url="PROJECT" dialect="MySQL" />
+  </component>
+</project>

@@ -79,7 +79,7 @@ public class TableCustomerController implements Initializable {
     @FXML
     public void Add_users() {
         conn = ConnectDB.ConnectDb(1);
-        String sql = "insert into events values(?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into customer values(?,?,?,?,?,?,?,?,?)";
         try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, customer_id.getText());

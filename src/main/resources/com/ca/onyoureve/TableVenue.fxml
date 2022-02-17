@@ -4,9 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="600.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/16"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.TableCustomerController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.TableCustomerController">
    <bottom>
       <AnchorPane fx:id="pnl" prefHeight="38.0" prefWidth="809.0" style="-fx-background-color: #344;" BorderPane.alignment="CENTER">
          <children>
@@ -47,15 +45,15 @@
             <Button layoutX="32.0" layoutY="466.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Add_users" prefHeight="41.0" prefWidth="89.0" style="-fx-background-color: green; -fx-background-radius: 20;" text="Add" />
             <Button layoutX="134.0" layoutY="424.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Edit" prefHeight="41.0" prefWidth="89.0" style="-fx-background-color: orange; -fx-background-radius: 20;" text="Update" />
             <Button layoutX="134.0" layoutY="490.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Delete" prefHeight="34.0" prefWidth="89.0" style="-fx-background-color: red;" text="Delete" />
-            <TextField fx:id="customer_id" layoutX="32.0" layoutY="30.0" promptText="Customer ID" />
-            <TextField fx:id="name" layoutX="33.0" layoutY="70.0" promptText="Customer Name" />
-            <TextField fx:id="email" layoutX="33.0" layoutY="109.0" promptText="Email" />
-            <TextField fx:id="phone_no" layoutX="33.0" layoutY="148.0" promptText="Phone No" />
-            <TextField fx:id="age" layoutX="32.0" layoutY="194.0" promptText="Age" />
-            <TextField fx:id="address" layoutX="32.0" layoutY="232.0" promptText="Address" />
-            <TextField fx:id="nid" layoutX="32.0" layoutY="278.0" promptText="NID" />
-            <TextField fx:id="membership_status" layoutX="33.0" layoutY="318.0" promptText="Membership Status" />
-            <TextField fx:id="acc_no" layoutX="33.0" layoutY="360.0" promptText="Account Number" />
+            <TextField fx:id="id" layoutX="32.0" layoutY="30.0" promptText="Venue ID" />
+            <TextField fx:id="name" layoutX="33.0" layoutY="70.0" promptText="Venue Name" />
+            <TextField fx:id="location" layoutX="33.0" layoutY="109.0" promptText="Location" />
+            <TextField fx:id="address" layoutX="33.0" layoutY="148.0" promptText="Address" />
+            <TextField fx:id="max_capacity" layoutX="32.0" layoutY="194.0" promptText="Max_CapaCity" />
+            <TextField fx:id="description" layoutX="32.0" layoutY="232.0" promptText="Description" />
+            <TextField fx:id="category" layoutX="32.0" layoutY="278.0" promptText="Category" />
+            <TextField fx:id="contact_info" layoutX="33.0" layoutY="318.0" promptText="Contact Info" />
+            <TextField fx:id="cost" layoutX="33.0" layoutY="360.0" promptText="Cost" />
          </children>
       </AnchorPane>
    </left>
@@ -67,13 +65,13 @@
               <columns>
                 <TableColumn fx:id="c_id" maxWidth="750.0" minWidth="30.0" prefWidth="52.333343505859375" text=" ID" />
                 <TableColumn fx:id="c_name" maxWidth="750.0" minWidth="30.0" prefWidth="74.66668701171875" text=" Name" />
-                  <TableColumn fx:id="c_email" maxWidth="750.0" minWidth="30.0" prefWidth="129.0" text="Email" />
-                  <TableColumn fx:id="c_phone_no" maxWidth="750.0" minWidth="16.33331298828125" prefWidth="68.66665649414062" text="PhoneNo" />
-                  <TableColumn fx:id="c_age" maxWidth="750.0" minWidth="2.0" prefWidth="40.0" text="Age" />
-                  <TableColumn fx:id="c_address" maxWidth="1193.3330281575518" minWidth="30.0" prefWidth="81.3333740234375" text="Address" />
-                  <TableColumn fx:id="c_nid" prefWidth="93.33331298828125" text="NID" />
-                  <TableColumn fx:id="c_ms" prefWidth="61.0" text="MS" />
-                  <TableColumn fx:id="c_acc_no" prefWidth="76.0" text="Acc No" />
+                  <TableColumn fx:id="c_location" maxWidth="750.0" minWidth="30.0" prefWidth="129.0" text="Location" />
+                  <TableColumn fx:id="c_address" maxWidth="750.0" minWidth="16.33331298828125" prefWidth="68.66665649414062" text="Address" />
+                  <TableColumn fx:id="c_max_capacity" maxWidth="750.0" minWidth="2.0" prefWidth="40.0" text="M.CP" />
+                  <TableColumn fx:id="c_description" maxWidth="1193.3330281575518" minWidth="30.0" prefWidth="81.3333740234375" text="Description" />
+                  <TableColumn fx:id="c_category" prefWidth="93.33331298828125" text="Category" />
+                  <TableColumn fx:id="c_contact_info" prefWidth="61.0" text="Contact" />
+                  <TableColumn fx:id="c_cost" prefWidth="76.0" text="Cost" />
               </columns>
             </TableView>
              </ScrollPane>

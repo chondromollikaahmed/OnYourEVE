@@ -9,7 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane id="welcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WelcomeController">
+<BorderPane id="welcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WelcomeController">
    <top>
       <AnchorPane maxHeight="80.0" maxWidth="400.0" prefHeight="30.0" prefWidth="715.0" BorderPane.alignment="CENTER">
          <children>
@@ -73,11 +75,11 @@
                <children>
                   <VBox prefHeight="332.0" prefWidth="233.0" spacing="20.0">
 
-                        <JFXTextField styleClass="whiteBG" />
-                     <JFXTextField styleClass="whiteBG" />
+                        <JFXTextField fx:id="cus_id" promptText="CustomerID/username/email" styleClass="whiteBG" />
+                     <JFXTextField fx:id="cus_pass" promptText="Password" styleClass="whiteBG" />
 
 
-                     <JFXButton fx:id="customer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
+                     <JFXButton fx:id="customer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" onAction="#btnCSignAction" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
                         <font>
                            <Font size="18.0" />
                         </font>
@@ -104,15 +106,15 @@
                <children>
                   <VBox prefHeight="332.0" prefWidth="233.0" spacing="20.0" styleClass="textFCustom">
                      <children>
-                        <JFXTextField styleClass="whiteBG" />
-                        <JFXTextField styleClass="whiteBG" />
+                        <JFXTextField fx:id="man_id" promptText="ManagerD/username/email" styleClass="whiteBG" />
+                        <JFXTextField fx:id="man_pass" promptText="Password" styleClass="whiteBG" />
 
                         <JFXRadioButton fx:id="mgr_btn" layoutX="40.0" layoutY="241.0" style="-jfx-unselected-color: White; -jfx-selected-color: MediumSpringGreen;" text="Manager" textFill="WHITE">
                         </JFXRadioButton>
 
 
 
-                        <JFXButton fx:id="manager_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
+                        <JFXButton fx:id="manager_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" onAction="#btnMSignAction" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -140,11 +142,11 @@
                <children>
                   <VBox prefHeight="332.0" prefWidth="233.0" spacing="20.0">
                      <children>
-                        <JFXTextField styleClass="whiteBG" />
-                        <JFXTextField styleClass="whiteBG" />
+                        <JFXTextField fx:id="off_id" promptText="OfficerID/username/email" styleClass="whiteBG" />
+                        <JFXTextField fx:id="off_pass" promptText="Password" styleClass="whiteBG" />
 
 
-                        <JFXButton fx:id="officer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
+                        <JFXButton fx:id="officer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" onAction="#btnOSignAction" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>

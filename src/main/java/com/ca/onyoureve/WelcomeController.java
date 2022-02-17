@@ -400,6 +400,22 @@ public class WelcomeController implements Initializable {
     }
 
     @FXML
-    public void tableViewAction(ActionEvent actionEvent) {
+    public void tableViewAction(ActionEvent actionEvent) throws IOException {
+
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("TableCustomer.fxml"));
+        Parent root = loader.load();
+
+        //Get controller of manager menu scene
+        TableCustomerController controller = loader.getController();
+
+        // close current window
+        Stage window = (Stage) mgr_btn.getScene().getWindow();
+
+        // start new window for manager scene
+        window = new Stage();
+        window.setScene(new Scene(root));
+        window.show();
+
     }
 }

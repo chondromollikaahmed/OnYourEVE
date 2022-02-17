@@ -16,15 +16,17 @@ show databases;
 create database if not exists onyoureve;
 use onyoureve;
 
+
+drop table customer;
 create table customer
 (
     customer_id       int AUTO_INCREMENT PRIMARY KEY,
     name              varchar(30),
-    email             varchar(20),
+    email             varchar(20) unique ,
     phone_no          varchar(30),
     age               double,
     address           varchar(30),
-    nid               varchar(30),
+    nid               varchar(30) unique ,
     membership_status numeric(20, 0),
     acc_no            varchar(20)
 );
@@ -35,6 +37,12 @@ ALTER TABLE customer
     ADD CONSTRAINT emailvalidation
         CHECK (email REGEXP
                "^[a-zA-Z0-9][a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]*?[a-zA-Z0-9._-]?@[a-zA-Z0-9][a-zA-Z0-9._-]*?[a-zA-Z0-9]?\\.[a-zA-Z]{2,63}$");
+
+
+alter table  customer
+    add constraint phone_no_check
+        check (phone_no REGEXP
+               "^[0-9]{11}$");
 
 create table customerpass
 (
@@ -47,6 +55,8 @@ drop table customerpass;
 alter table customerpass
     add constraint fk_customer_id foreign key (customer_id) references customer (customer_id);
 
+alter table customerpass
+drop constraint fk_customer_id;
 
 
 create table employee
@@ -56,7 +66,7 @@ create table employee
     dob         date,
     phone_no    varchar(30),
     email       varchar(30) UNIQUE,
-    nid         varchar(20),
+    nid         varchar(20) unique ,
     acc_no      varchar(20),
     emp_type    varchar(10),
     salary_rate numeric(10),
@@ -68,6 +78,12 @@ alter table employee
     add constraint emailvalidation
         CHECK (email REGEXP
                "^[a-zA-Z0-9][a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]*?[a-zA-Z0-9._-]?@[a-zA-Z0-9][a-zA-Z0-9._-]*?[a-zA-Z0-9]?\\.[a-zA-Z]{2,63}$");
+
+
+alter table employee
+    add constraint phone_no_check
+        check (phone_no REGEXP
+               "^[0-9]{11}$");
 
 
 create table employeepass
@@ -182,3 +198,18 @@ ALTER TABLE event
 
 ALTER TABLE event
     ADD FOREIGN KEY (media_id) REFERENCES media_requirements (media_id);
+
+
+
+
+
+insert into employee(employee_id, name, dob, email, phone_no, nid, acc_no, emp_type, salary_rate, address, mgr_id)
+values('20001', 'Dummy Manager', STR_TO_DATE('16/3/00', '%d/%m/%y'), 'dummy@yahoo.com', '03303364325', '1242-532450', 934545, 'Monthly', 1000, 800, NULL);
+
+insert into employee(employee_id, name, dob, email, phone_no, nid, acc_no, emp_type, salary_rate, address, mgr_id)
+values('20002', 'Ahmed C', STR_TO_DATE('12/4/01', '%d/%m/%y'), 'ahmed@gmail.com', '03006753456', '3323-322938475', 765434567, 'Hourly', 2000, 600, '20001');
+
+update employee set name = 'Ahmed Chondromollika' where employee_id = '20001';
+update employee set name = 'Chondromollika Ahmed' where employee_id = '20002';
+
+select * from employee;

@@ -12,4 +12,8 @@
 package com.ca.onyoureve;
 
 public class Dami {
+    public static void main(String[] args) {
+
+        System.out.println("This is a dami class\n");
+    }
 }

@@ -7,15 +7,20 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -263,7 +268,18 @@ public class TableCustomerController implements Initializable {
     }
 
     @FXML
-    public void OpenEmployee(ActionEvent actionEvent) {
+    public void OpenEmployee(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("TableEmployee.fxml"));
+        Parent root = loader.load();
+        //Get controller of manager menu scene
+        TableCustomerController controller = loader.getController();
+        // close current window
+        Stage window = (Stage) name.getScene().getWindow();
+        window.close();
+        // start new window for manager scene
+        window = new Stage();
+        window.setScene(new Scene(root));
+        window.show();
     }
 
     @FXML

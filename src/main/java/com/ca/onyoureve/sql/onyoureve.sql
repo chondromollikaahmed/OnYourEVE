@@ -199,3 +199,17 @@ ALTER TABLE event
 ALTER TABLE event
     ADD FOREIGN KEY (media_id) REFERENCES media_requirements (media_id);
 
+
+
+
+
+insert into employee(employee_id, name, dob, email, phone_no, nid, acc_no, emp_type, salary_rate, address, mgr_id)
+values('20001', 'Dummy Manager', STR_TO_DATE('16/3/00', '%d/%m/%y'), 'dummy@yahoo.com', '03303364325', '1242-532450', 934545, 'Monthly', 1000, 800, NULL);
+
+insert into employee(employee_id, name, dob, email, phone_no, nid, acc_no, emp_type, salary_rate, address, mgr_id)
+values('20002', 'Ahmed C', STR_TO_DATE('12/4/01', '%d/%m/%y'), 'ahmed@gmail.com', '03006753456', '3323-322938475', 765434567, 'Hourly', 2000, 600, '20001');
+
+update employee set name = 'Ahmed Chondromollika' where employee_id = '20001';
+update employee set name = 'Chondromollika Ahmed' where employee_id = '20002';
+
+select * from employee;

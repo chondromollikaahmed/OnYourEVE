@@ -55,6 +55,8 @@ public class WelcomeController implements Initializable {
     private JFXTextField off_pass;
     @FXML
     private JFXTextField off_id;
+    @FXML
+    private JFXButton tableview;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -395,5 +397,9 @@ public class WelcomeController implements Initializable {
     @FXML
     public void btnOSignAction(ActionEvent actionEvent) {
 
+    }
+
+    @FXML
+    public void tableViewAction(ActionEvent actionEvent) {
     }
 }

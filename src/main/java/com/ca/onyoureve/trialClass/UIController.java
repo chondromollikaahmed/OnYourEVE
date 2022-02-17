@@ -1,7 +1,6 @@
 package com.ca.onyoureve.trialClass;
 
 import com.ca.onyoureve.ConnectDB;
-import com.ca.onyoureve.Events;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;

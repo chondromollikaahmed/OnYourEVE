@@ -9,9 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane id="welcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" stylesheets="@style.css"
-            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WelcomeController">
+<BorderPane id="welcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.WelcomeController">
    <top>
       <AnchorPane maxHeight="80.0" maxWidth="400.0" prefHeight="30.0" prefWidth="715.0" BorderPane.alignment="CENTER">
          <children>
@@ -24,10 +22,11 @@
    </top>
    <bottom>
 
-            <HBox layoutX="14.0" layoutY="6.0" prefHeight="33.0" prefWidth="685.0" spacing="140.0" BorderPane.alignment="BOTTOM_CENTER">
+            <HBox layoutX="14.0" layoutY="6.0" prefHeight="33.0" prefWidth="685.0" spacing="40.0" BorderPane.alignment="BOTTOM_CENTER">
                <children>
                   <JFXButton id="raisedButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#openUrl" text="2021,All Right Reserved" HBox.hgrow="ALWAYS" />
                   <JFXButton id="raisedButton" fx:id="termC" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#termCAction" text="Terms And Condition" HBox.hgrow="ALWAYS" />
+                  <JFXButton id="raisedButton" fx:id="tableview" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#tableViewAction" prefHeight="25.0" prefWidth="117.0" text="Enter TableViewMode" HBox.hgrow="ALWAYS" />
                   <JFXButton id="raisedButton" fx:id="about" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" onAction="#aboutAction" text="About OnYourEVE" HBox.hgrow="ALWAYS" />
                </children>
          <padding>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.TableCustomerController">
+   <bottom>
+      <AnchorPane fx:id="pnl" prefHeight="38.0" prefWidth="809.0" style="-fx-background-color: #344;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="128.0" layoutY="11.0" mnemonicParsing="false" onAction="#OpenEmployee" text="Employee Table" />
+            <Button layoutX="241.0" layoutY="11.0" mnemonicParsing="false" onAction="#OpenEventTable" text="Event Table" />
+            <Button layoutX="330.0" layoutY="11.0" mnemonicParsing="false" onAction="#OpenVenue" text="Venue Table" />
+            <Button layoutX="446.0" layoutY="10.0" mnemonicParsing="false" onAction="#OpenMenu" text="Menu Table" />
+            <Button layoutX="663.0" layoutY="10.0" mnemonicParsing="false" onAction="#OpenCatering" text="Catering" />
+            <Button layoutX="562.0" layoutY="10.0" mnemonicParsing="false" onAction="#OpenStudio" text="Studio" />
+            <Button layoutX="741.0" layoutY="10.0" mnemonicParsing="false" onAction="#OpenMediaRequire" text="Media_Requirement" />
+            <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#OpenCustomer" text="Customer Table" />
+         </children></AnchorPane>
+   </bottom>
+   <top>
+      <MenuBar style="-fx-background-color: #b0d1d1;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <AnchorPane prefHeight="537.0" prefWidth="247.0" style="-fx-background-color: #baf9ff;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="32.0" layoutY="466.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Add_users" prefHeight="41.0" prefWidth="89.0" style="-fx-background-color: green; -fx-background-radius: 20;" text="Add" />
+            <Button layoutX="134.0" layoutY="424.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Edit" prefHeight="41.0" prefWidth="89.0" style="-fx-background-color: orange; -fx-background-radius: 20;" text="Update" />
+            <Button layoutX="134.0" layoutY="490.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Delete" prefHeight="34.0" prefWidth="89.0" style="-fx-background-color: red;" text="Delete" />
+            <TextField fx:id="customer_id" layoutX="32.0" layoutY="30.0" promptText="Customer ID" />
+            <TextField fx:id="name" layoutX="33.0" layoutY="70.0" promptText="Customer Name" />
+            <TextField fx:id="email" layoutX="33.0" layoutY="109.0" promptText="Email" />
+            <TextField fx:id="phone_no" layoutX="33.0" layoutY="148.0" promptText="Phone No" />
+            <TextField fx:id="age" layoutX="32.0" layoutY="194.0" promptText="Age" />
+            <TextField fx:id="address" layoutX="32.0" layoutY="232.0" promptText="Address" />
+            <TextField fx:id="nid" layoutX="32.0" layoutY="278.0" promptText="NID" />
+            <TextField fx:id="membership_status" layoutX="33.0" layoutY="318.0" promptText="Membership Status" />
+            <TextField fx:id="acc_no" layoutX="33.0" layoutY="360.0" promptText="Account Number" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane fx:id="table_events" prefHeight="540.0" prefWidth="668.0" BorderPane.alignment="CENTER">
+         <children>
+             <ScrollPane layoutX="14.0" layoutY="40.0" prefHeight="500.0" prefWidth="660.0">
+            <TableView fx:id="elist" layoutX="2.0" layoutY="30.0" onMouseClicked="#updateTextField" prefHeight="319.0" prefWidth="678.0">
+              <columns>
+                <TableColumn fx:id="c_id" maxWidth="750.0" minWidth="30.0" prefWidth="52.333343505859375" text=" ID" />
+                <TableColumn fx:id="c_name" maxWidth="750.0" minWidth="30.0" prefWidth="74.66668701171875" text=" Name" />
+                  <TableColumn fx:id="c_email" maxWidth="750.0" minWidth="30.0" prefWidth="129.0" text="Email" />
+                  <TableColumn fx:id="c_phone_no" maxWidth="750.0" minWidth="16.33331298828125" prefWidth="68.66665649414062" text="PhoneNo" />
+                  <TableColumn fx:id="c_age" maxWidth="750.0" minWidth="2.0" prefWidth="40.0" text="Age" />
+                  <TableColumn fx:id="c_address" maxWidth="1193.3330281575518" minWidth="30.0" prefWidth="81.3333740234375" text="Address" />
+                  <TableColumn fx:id="c_nid" prefWidth="93.33331298828125" text="NID" />
+                  <TableColumn fx:id="c_ms" prefWidth="61.0" text="MS" />
+                  <TableColumn fx:id="c_acc_no" prefWidth="76.0" text="Acc No" />
+              </columns>
+            </TableView>
+             </ScrollPane>
+            <ImageView fx:id="chchch" fitHeight="150.0" fitWidth="200.0" layoutX="189.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://github.com/chondromollikaahmed/OnYourEVE/blob/d81f7498572e55c1f86f92a3c9c65717b0be913d/src/main/resources/com/ca/onyoureve/OnYourEVE-logos/OnYourEVE-logos.jpeg" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txt_search" layoutX="209.0" layoutY="1.0" promptText="Search" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

@@ -1,6 +1,7 @@
 package com.ca.onyoureve;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -218,7 +219,7 @@ public class WelcomeController implements Initializable {
     }
 
 
-    public boolean checkInputs(JFXTextField id,JFXTextField pass) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public boolean checkInputs(JFXTextField id, JFXTextField pass) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         // null values
         if (id == null || pass == null) {
             toPopUp("Invalid Input", "Please fill all the fields.");
@@ -232,5 +233,72 @@ public class WelcomeController implements Initializable {
         }
 
         return true;
+    }
+
+    @FXML
+    public void btnMSignAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void btnCSignAction(ActionEvent actionEvent) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+
+        if (checkInputs(cus_id,cus_pass) == false) {
+            System.out.println("Input check failed");
+            return;
+        }
+
+        String c_pass = cus_pass.getText();
+        String c_idOrEmail = cus_id.getText();
+
+        Customer obj = new Customer();
+        boolean login = obj.customerLogin(c_idOrEmail, c_pass);
+
+        // give error if incorrect login
+        if (!login) {
+            toPopUp("Login Failed", "Invalid email/ID and password combination.");
+        }
+
+        // Login successful - go to welcome screen
+        else {
+            // store customer info
+            LoggedUser.initCust(c_idOrEmail);
+
+            String msg = "You have just signed in to our system. If this was not you, then please contact us at chondromollikaahmed@gmail.com";
+            SendMail.sendEmail("Successful Login", msg, LoggedUser.getCust().getEmail());
+
+            goToCustMenu();
+        }
+    }
+
+
+
+    // go to customer background
+    public void goToCustMenu() throws IOException {
+        System.out.println("Loading customer menu");
+
+        //Load next
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuCustomer.fxml"));
+        Parent root = loader.load();
+
+        //Get controller of cust menu scene
+        MenuCustomerController controller = loader.getController();
+
+        //setting information
+        controller.setWelcome(LoggedUser.getCust().getName());
+        controller.setEventBookedStatus(LoggedUser.getCustomer_id());
+
+        // close current window
+        Stage stage = (Stage) customer_sin.getScene().getWindow();
+        stage.close();
+
+        // start new window for next scene
+        stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Welcome");
+        stage.show();
+    }
+
+    @FXML
+    public void btnOSignAction(ActionEvent actionEvent) {
     }
 }

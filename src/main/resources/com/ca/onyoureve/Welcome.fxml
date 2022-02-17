@@ -79,7 +79,7 @@
                      <JFXTextField fx:id="cus_pass" promptText="Password" styleClass="whiteBG" />
 
 
-                     <JFXButton fx:id="customer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0"  prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
+                     <JFXButton fx:id="customer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" onAction="#btnCSignAction" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
                         <font>
                            <Font size="18.0" />
                         </font>
@@ -114,7 +114,7 @@
 
 
 
-                        <JFXButton fx:id="manager_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
+                        <JFXButton fx:id="manager_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" onAction="#btnMSignAction" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -146,7 +146,7 @@
                         <JFXTextField fx:id="off_pass" promptText="Password" styleClass="whiteBG" />
 
 
-                        <JFXButton fx:id="officer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
+                        <JFXButton fx:id="officer_sin" buttonType="RAISED" layoutX="40.0" layoutY="334.0" onAction="#btnOSignAction" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>

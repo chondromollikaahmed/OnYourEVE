@@ -45,8 +45,8 @@ public class mgr_edit_emp_Controller {
         emp = emp.getEmployee(emp_id);
 
         // set values
-        points.setText(emp.getAddress());
-        nid.setText(emp.getNid());
+        points.setText(Integer.toString(emp.getPointsFromDB()));
+        nid.setText(emp.getnid());
         dob.setText(emp.getDob());
 
         String firstName, lastName;
@@ -58,7 +58,7 @@ public class mgr_edit_emp_Controller {
         fname.setText(firstName);
         lname.setText(lastName);
 
-        accountno.setText(emp.getAcc_no());
+        accountno.setText(emp.getAccount_number());
         email.setText(emp.getEmail());
 
         fname.setEditable(false);
@@ -132,15 +132,15 @@ public class mgr_edit_emp_Controller {
         emp = emp.getEmployee(emp_id);
 
         emp.setEmail(emp_email);
-        emp.setAcc_no(emp_account);
-        emp.setNid(emp_nid);
+        emp.setAccount_number(emp_account);
+        emp.setnid(emp_nid);
         emp.setDob(emp_dob);
         emp.setName(emp_fname + " " + emp_lname);
 
         // updating record in database
         emp.editEmployeeAccountField(emp.getEmployee_id(),"email",emp.getEmail(), false);
-        emp.editEmployeeAccountField(emp.getAcc_no(),"account_number",emp.getAcc_no(), false);
-        emp.editEmployeeAccountField(emp.getEmployee_id(), "nid", emp.getNid(), false);
+        emp.editEmployeeAccountField(emp.getAccount_number(),"account_number",emp.getAccount_number(), false);
+        emp.editEmployeeAccountField(emp.getEmployee_id(), "nid", emp.getnid(), false);
         emp.editEmployeeAccountField(emp.getEmployee_id(), "name", emp.getName(), false);
         emp.editEmployeeAccountField(emp.getEmployee_id(),"points", emp_points,true);
 
@@ -186,7 +186,9 @@ public class mgr_edit_emp_Controller {
     }
 
     // open popup
+    // open popup
     public void openPopup(String heading, String text) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+        //Load next
         new WelcomeController().toPopUp(heading, text);
     }
 }

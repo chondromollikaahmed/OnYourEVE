@@ -61,18 +61,18 @@ public class Studio
     }
 
     public Studio getStudio(String studio_id) {
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         return obj.getStudio(studio_id);
     }
 
     public HashMap<ArrayList<String>, ArrayList<Studio>> getListOfStudiosAndIDs() {
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         return obj.getListOfStudiosAndIDs();
     }
 
     // edit one field
     public void editStudioField(String id, String field, String new_value, boolean isNumeric) {
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         obj.updateField(id,field,new_value, isNumeric);
     }
 }

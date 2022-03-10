@@ -91,18 +91,18 @@ public class Venue
     }
 
     public Venue getVenue(String venue_id) {
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         return obj.getVenue(venue_id);
     }
 
     public HashMap<ArrayList<String>, ArrayList<Venue>> getListOfVenuesAndIDs() {
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         return obj.getListOfVenuesAndIDs();
     }
 
     // edit one field
     public void editVenueField(String id, String field, String new_value, boolean isNumeric) {
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         obj.updateField(id,field,new_value, isNumeric);
     }
 }

@@ -139,7 +139,7 @@
                </children></AnchorPane>
             <AnchorPane id="officerUI" fx:id="pnl_off" prefHeight="345.0" prefWidth="234.0" stylesheets="@style.css">
                <children>
-                  <VBox prefHeight="332.0" prefWidth="233.0" spacing="20.0">
+                  <VBox prefHeight="344.0" prefWidth="233.0" spacing="20.0">
                      <children>
                         <JFXTextField fx:id="off_id" promptText="OfficerID/username/email" styleClass="whiteBG" />
                         <JFXTextField fx:id="off_pass" promptText="Password" styleClass="whiteBG" />

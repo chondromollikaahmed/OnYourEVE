@@ -3,11 +3,11 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
+
 <!--
   ~ /**
   ~  * Created by JehadurRE on 2/17/22, 8:20 AM
@@ -19,8 +19,7 @@
   ~  */
   -->
 
-<GridPane alignment="center" hgap="10" prefHeight="665.0" prefWidth="1000.0" vgap="10"
-          xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.mgr_view_emp_Controller">
+<GridPane alignment="center" hgap="10" prefHeight="665.0" prefWidth="1000.0" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.mgr_view_emp_Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -36,12 +35,12 @@
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="665.0" layoutX="-6.0" layoutY="1.0" opacity="0.4" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: black;" width="1005.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Label layoutX="290.0" layoutY="12.0" style="-fx-font-size: 100; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="View Employees" textFill="WHITE" AnchorPane.topAnchor="15.0">
+            <Label layoutX="290.0" layoutY="12.0" style="-fx-font-size: 60;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="View Employees" textFill="WHITE" AnchorPane.topAnchor="15.0">
                <effect>
                   <DropShadow />
                </effect>
             </Label>
-            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="740.0" layoutY="52.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" onAction="#handleExitButton">
+            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="740.0" layoutY="52.0" onAction="#handleExitButton" style="-fx-background-color: transparent;" text="&lt;--" textFill="WHITE" underline="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -115,7 +114,7 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="Text_CNIC" alignment="CENTER" focusColor="#00ffa2" layoutX="201.0" layoutY="559.0" pickOnBounds="false" prefHeight="25.0" prefWidth="70.0" promptText="CNIC" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+            <JFXTextField fx:id="Text_nid" alignment="CENTER" focusColor="#00ffa2" layoutX="201.0" layoutY="559.0" pickOnBounds="false" prefHeight="25.0" prefWidth="70.0" promptText="nid" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" text="NID" unFocusColor="WHITE">
                <effect>
                   <DropShadow />
                </effect>
@@ -125,7 +124,7 @@
                   <TableColumn fx:id="C_ID" prefWidth="75.0" text="ID" />
                   <TableColumn fx:id="C_FN" prefWidth="75.0" text="First Name" />
                   <TableColumn fx:id="C_LN" prefWidth="75.0" text="Last Name" />
-                  <TableColumn fx:id="C_CNIC" prefWidth="75.0" text="CNIC" />
+                  <TableColumn fx:id="C_nid" prefWidth="75.0" text="NID" />
                   <TableColumn fx:id="C_DOB" prefWidth="75.0" text="DOB" />
                   <TableColumn fx:id="C_Email" prefWidth="75.0" text="Email" />
                   <TableColumn fx:id="C_Contact" prefWidth="75.0" text="Contact" />
@@ -163,7 +162,7 @@
                   <DropShadow />
                </effect>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="166.0" layoutY="624.0" pickOnBounds="false" ripplerFill="#d0d0d0" text="Privacy Policy" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="22.0" layoutY="617.0" pickOnBounds="false" ripplerFill="#d0d0d0" text="About Us" textFill="WHITE">
                <effect>
                   <DropShadow />
                </effect>
@@ -171,23 +170,7 @@
                   <Font size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="314.0" layoutY="624.0" pickOnBounds="false" ripplerFill="#d0d0d0" text="Terms of Use" textFill="WHITE">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="54.0" layoutY="624.0" pickOnBounds="false" ripplerFill="#d0d0d0" text="About Us" textFill="WHITE">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <Label layoutX="614.0" layoutY="631.0" pickOnBounds="false" text="© 2020 All Rights Reserved" textFill="WHITE">
+            <Label layoutX="723.0" layoutY="623.0" pickOnBounds="false" text="© 2022 All Rights Reserved" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>

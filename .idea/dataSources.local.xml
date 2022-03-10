@@ -35,6 +35,10 @@
             <node kind="database" qname="onyoureve">
               <node kind="schema" qname="dbo" />
             </node>
+            <node kind="database">
+              <name qname="Garbage" />
+              <name qname="event" />
+            </node>
           </node>
         </introspection-scope>
       </schema-mapping>

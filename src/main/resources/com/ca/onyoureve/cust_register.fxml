@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+  ~ /**
+  ~  * Created by JehadurRE on 3/10/22, 4:19 AM
+  ~  *chondromollikaahmed@gmail.com
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 3/9/22, 11:42 PM
+  ~  *Current Path E:/OnYourEVE/src/main/resources/com/ca/onyoureve/cust_register.fxml
+  ~  *OnYourEVE
+  ~  */
+  -->
+
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="400.0" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.cust_register_Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@images/Customer_Register.jpg" />
+               </image></ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="600.0" opacity="0.86" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to bottom, transparent , black);" width="384.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <JFXTextField fx:id="email" alignment="CENTER" focusColor="MEDIUMSPRINGGREEN" layoutX="74.0" layoutY="254.0" prefHeight="42.0" prefWidth="250.0" promptText="Email Address" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXTextField>
+            <JFXTextField fx:id="fname" alignment="CENTER" focusColor="MEDIUMSPRINGGREEN" layoutX="74.0" layoutY="338.0" prefHeight="42.0" prefWidth="250.0" promptText="First Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXTextField>
+            <JFXTextField fx:id="pass" alignment="CENTER" focusColor="MEDIUMSPRINGGREEN" layoutX="74.0" layoutY="296.0" prefHeight="42.0" prefWidth="250.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXTextField>
+            <JFXTextField fx:id="lname" alignment="CENTER" focusColor="MEDIUMSPRINGGREEN" layoutX="74.0" layoutY="380.0" prefHeight="42.0" prefWidth="250.0" promptText="Last Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXTextField>
+            <JFXTextField fx:id="nid" alignment="CENTER" focusColor="MEDIUMSPRINGGREEN" layoutX="74.0" layoutY="422.0" prefHeight="42.0" prefWidth="250.0" promptText="National ID Number" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXTextField>
+            <DatePicker fx:id="dob" layoutX="76.0" layoutY="470.0" prefHeight="40.0" prefWidth="250.0" promptText="      Select Date of Birth" style="-fx-skin: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white;" stylesheets="@css/Text_Style.css">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <styleClass>
+                  <String fx:value="date-picker-display-node" />
+                  <String fx:value="date-picker-popup" />
+               </styleClass>
+            </DatePicker>
+            <JFXButton buttonType="RAISED" layoutX="76.0" layoutY="529.0" onAction="#handleRegisterButtonAction" opacity="0.78" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: A17B3F;" text="Save Changes" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="348.0" layoutY="29.0" onAction="#handleExitButton" ripplerFill="#d0d0d0" text="&lt;--" textFill="WHITE" underline="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="227.0" fitWidth="257.0" layoutX="74.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@OnYourEVE-logos/OnYourEVE-logos.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

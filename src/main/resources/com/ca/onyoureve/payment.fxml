@@ -7,15 +7,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: black;"
-            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.PaymentController">
+<!--
+  ~ /**
+  ~  * Created by JehadurRE on 3/9/22, 6:07 AM
+  ~  *chondromollikaahmed@gmail.com
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 2/17/22, 5:59 AM
+  ~  *Current Path E:/OnYourEVE/src/main/resources/com/ca/onyoureve/payment.fxml
+  ~  *OnYourEVE
+  ~  */
+  -->
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.payment_Controller">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="132.0" layoutY="897.0" opacity="0.78" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@images/payment.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="136.0" prefHeight="124.0" prefWidth="517.0" style="-fx-font-size: 120; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Checkout" textFill="WHITE" AnchorPane.topAnchor="0.0">
+      <Label layoutX="136.0" prefHeight="124.0" prefWidth="517.0" style="-fx-font-size: 60; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Checkout" textFill="WHITE" AnchorPane.topAnchor="0.0">
          <effect>
             <DropShadow />
          </effect>
@@ -38,8 +48,8 @@
       </JFXButton>
       <AnchorPane layoutX="474.0" layoutY="165.0" prefHeight="271.0" prefWidth="270.0" rotate="-1.5" style="-fx-background-color: transparent;">
          <children>
-            <Label layoutX="9.0" layoutY="-9.0" style="-fx-font-size: 35;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Thank You for Booking with Us" />
-            <JFXRadioButton fx:id="easypaisa" layoutX="16.0" layoutY="104.0" style="-jfx-unselected-color: black; -jfx-selected-color: MediumSpringGreen;" text="Bkash">
+            <Label layoutX="9.0" layoutY="-9.0" prefHeight="52.0" prefWidth="405.0" style="-fx-font-size: 15;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Thank You for Booking with Us" />
+            <JFXRadioButton fx:id="bkash" layoutX="16.0" layoutY="104.0" style="-jfx-unselected-color: black; -jfx-selected-color: MediumSpringGreen;" text="Bkash">
                <font>
                   <Font size="14.0" />
                </font>
@@ -49,7 +59,7 @@
                   <Font size="14.0" />
                </font>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="jazzcash" layoutX="16.0" layoutY="136.0" style="-jfx-unselected-color: black; -jfx-selected-color: MediumSpringGreen;" text="Nagad">
+            <JFXRadioButton fx:id="Nagad" layoutX="16.0" layoutY="136.0" style="-jfx-unselected-color: black; -jfx-selected-color: MediumSpringGreen;" text="Nagad">
                <font>
                   <Font size="14.0" />
                </font>
@@ -59,6 +69,11 @@
             <JFXTextField fx:id="mobile" focusColor="#00ff8c" layoutX="13.0" layoutY="255.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Mobile Number" style="-fx-prompt-text-fill: black; -fx-text-fill: black;" unFocusColor="BLACK" />
             <JFXTextField fx:id="netTotal" focusColor="#00ff8c" layoutX="77.0" layoutY="44.0" prefHeight="25.0" prefWidth="178.0" promptText="Net Total" style="-fx-prompt-text-fill: black; -fx-text-fill: black;" unFocusColor="BLACK" />
             <Label layoutX="17.0" layoutY="36.0" text="Net Total:" />
+            <ImageView fitHeight="82.0" fitWidth="78.0" layoutX="160.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" rotate="-18.8">
+               <image>
+                  <Image url="@OnYourEVE-logos/OnYourEVE-logos_transparent.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

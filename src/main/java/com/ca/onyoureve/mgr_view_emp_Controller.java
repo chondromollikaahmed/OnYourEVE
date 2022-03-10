@@ -33,7 +33,7 @@ public class mgr_view_emp_Controller implements Initializable {
     @FXML private TableColumn<Employee, String> C_ID;
     @FXML private TableColumn<Employee, String> C_FN;
     @FXML private TableColumn<Employee, String> C_LN;
-    @FXML private TableColumn<Employee, String> C_CNIC;
+    @FXML private TableColumn<Employee, String> C_nid;
     @FXML private TableColumn<Employee, String> C_DOB;
     @FXML private TableColumn<Employee, String> C_Email;
     @FXML private TableColumn<Employee, String> C_Contact;
@@ -55,7 +55,7 @@ public class mgr_view_emp_Controller implements Initializable {
     @FXML private JFXTextField Text_Account;
     @FXML private JFXTextField Text_MID;
     @FXML private JFXTextField Text_Searchbar;
-    @FXML private JFXTextField Text_CNIC;
+    @FXML private JFXTextField Text_nid;
     @FXML private JFXTextField selectedEmpID;
 
     /////////////// BUTTONS ////////////////////////
@@ -76,7 +76,7 @@ public class mgr_view_emp_Controller implements Initializable {
         C_ID.setCellValueFactory(new PropertyValueFactory<Employee, String>("employee_id"));
         C_FN.setCellValueFactory(new PropertyValueFactory<Employee, String>("fname"));
         C_LN.setCellValueFactory(new PropertyValueFactory<Employee, String>("lname"));
-        C_CNIC.setCellValueFactory(new PropertyValueFactory<Employee, String>("cnic"));
+        C_nid.setCellValueFactory(new PropertyValueFactory<Employee, String>("lname"));
         C_DOB.setCellValueFactory(new PropertyValueFactory<Employee, String>("dob"));
         C_Email.setCellValueFactory(new PropertyValueFactory<Employee, String>("email"));
         C_Contact.setCellValueFactory(new PropertyValueFactory<Employee, String>("phone_no"));
@@ -116,7 +116,7 @@ public class mgr_view_emp_Controller implements Initializable {
                 } else if (employee.getLname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches last name.
                 }
-                else if (String.valueOf(employee.getSalary_rate()).indexOf(lowerCaseFilter)!=-1)
+                else if (String.valueOf(employee.getWage_rate()).indexOf(lowerCaseFilter)!=-1)
                     return true;
                 else
                     return false; // Does not match.
@@ -152,14 +152,14 @@ public class mgr_view_emp_Controller implements Initializable {
         Text_WageType.clear();
         Text_Account.clear();
         Text_MID.clear();
-        Text_CNIC.clear();
+        Text_nid.clear();
     }
 
     public boolean checkAddInputs() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
 
         // check for null values
         if (Text_Fname == null || Text_LName == null || Text_DOB == null || Text_Email == null || Text_Contact == null
-                || Text_WageRate == null || Text_WageType == null || Text_Account == null || Text_MID == null || Text_CNIC == null) {
+                || Text_WageRate == null || Text_WageType == null || Text_Account == null || Text_MID == null || Text_nid == null) {
             openPopup("Missing Input", "Please fill all the fields.");
             return false;
         }
@@ -167,7 +167,7 @@ public class mgr_view_emp_Controller implements Initializable {
         // check for blank values
         if (Text_Fname.getText().isEmpty() || Text_LName.getText().isEmpty() || Text_DOB.getText().isEmpty() || Text_Email.getText().isEmpty()
                 || Text_Contact.getText().isEmpty() || Text_WageRate.getText().isEmpty() || Text_WageType.getText().isEmpty()
-                || Text_Account.getText().isEmpty() || Text_MID.getText().isEmpty()|| Text_CNIC.getText().isEmpty()) {
+                || Text_Account.getText().isEmpty() || Text_MID.getText().isEmpty()|| Text_nid.getText().isEmpty()) {
             openPopup("Missing Input", "Please fill all the fields.");
             return false;
         }
@@ -190,9 +190,9 @@ public class mgr_view_emp_Controller implements Initializable {
             return false;
         }
 
-        // check if cnic has any letters
-        if (Text_CNIC.getText().matches(".*[a-zA-Z]+.*")) {
-            openPopup("Invalid Input", "CNIC should contain only numbers and dashes.");
+        // check if nid has any letters
+        if (Text_nid.getText().matches(".*[a-zA-Z]+.*")) {
+            openPopup("Invalid Input", "nid should contain only numbers and dashes.");
             return false;
         }
 
@@ -324,7 +324,7 @@ public class mgr_view_emp_Controller implements Initializable {
         String dob = "";
         String contact = "";
         String email = "";
-        String c_cnic = "";
+        String c_nid = "";
         String w_t = "";
         String w_r = "";
         String acc = "";
@@ -357,11 +357,11 @@ public class mgr_view_emp_Controller implements Initializable {
         if (Text_MID != null) {
             mid = Text_MID.getText();
         }
-        if (Text_CNIC != null) {
-            c_cnic = Text_CNIC.getText();
+        if (Text_nid != null) {
+            c_nid = Text_nid.getText();
         }
 
-        Employee emp = new Employee(f_name + " " + l_name, dob, contact, email, c_cnic, acc, w_t, Integer.parseInt(w_r), "c", mid);
+        Employee emp = new Employee(f_name + " " + l_name, dob, contact, email, c_nid, acc, w_t, Integer.parseInt(w_r), 0, mid);
         emp.addEmployee();
         dataList.addAll(emp);
 
@@ -435,6 +435,7 @@ public class mgr_view_emp_Controller implements Initializable {
         window.show();
     }
 
+    // open popup
     // open popup
     public void openPopup(String heading, String text) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         //Load next

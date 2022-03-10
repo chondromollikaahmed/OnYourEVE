@@ -67,7 +67,7 @@ public class mgr_menu_Controller {
 
     public void handleExitButton(ActionEvent actionEvent) throws IOException {
         System.out.println("Exit button pressed");
-         LoggedUser.clearEmp();
+        LoggedUser.clearEmp();
         goToMgrSignIn();
     }
 
@@ -77,12 +77,12 @@ public class mgr_menu_Controller {
         System.out.println("Loading manager sign in window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Welcome.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_signin.fxml"));
         Parent root = loader.load();
 
         //Get controller of sign in scene
-        WelcomeController controller = loader.getController();
-       // controller.enableManagerButton();
+        mgr_signin_Controller controller = loader.getController();
+        controller.enableManagerButton();
 
         // close current window
         Stage window = (Stage) exit_btn.getScene().getWindow();
@@ -106,11 +106,11 @@ public class mgr_menu_Controller {
         System.out.println("Loading event options window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewEvent.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_view_events.fxml"));
         Parent root = loader.load();
 
         //Get controller of event scene
-        ViewEventController controller = loader.getController();
+        mgr_view_events_Controller controller = loader.getController();
 
         // close current window
         Stage window = (Stage) event_btn.getScene().getWindow();
@@ -165,11 +165,11 @@ public class mgr_menu_Controller {
         System.out.println("Loading catering options window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("EditCatering.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("catering_edit.fxml"));
         Parent root = loader.load();
 
         //Get controller of catering scene
-        EditCateringController controller = loader.getController();
+        catering_edit_Controller controller = loader.getController();
         controller.init();
 
         // close current window
@@ -194,11 +194,11 @@ public class mgr_menu_Controller {
         System.out.println("Loading studio options window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("EditStudio.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("studio_edit.fxml"));
         Parent root = loader.load();
 
         //Get controller of edit studios scene
-        EditStudioController controller = loader.getController();
+        studio_edit_Controller controller = loader.getController();
         controller.init();
 
         // close current window
@@ -253,11 +253,11 @@ public class mgr_menu_Controller {
         System.out.println("Loading edit options window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("EditManager.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_edit.fxml"));
         Parent root = loader.load();
 
         //Get controller of edit scene
-        EditManagerController controller = loader.getController();
+        mgr_edit_Controller controller = loader.getController();
         controller.init();
 
         // close current window

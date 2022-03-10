@@ -27,7 +27,7 @@ public class ConnectDB {
         try {
             if (value == 1) {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/onyoureve", "root", "");
+                Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/garbase", "root", "");
                 return conn;
             } else if (value == 2) {
                 String connectionUrl = "jdbc:sqlserver://JEHADUR\\SQLEXPRESS;databaseName=onyoureve;encrypt=true;trustServerCertificate=true;";

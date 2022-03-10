@@ -13,7 +13,7 @@ public class SendMail {
     private static String temp2 = "</p> <p style = \"color:black;font-family:calibri;font-size:120%\">Thank you for using OnYourEVE.</p> <h1 style = \"color:firebrick;font-family:calibri;text-align:center\">Have a great day. :) </h1> </body>";
     private static String finalstring;
 
-    private static Properties props;
+    private static Properties props = new Properties();
     private static String username;
     private static String password;
 
@@ -57,6 +57,8 @@ public class SendMail {
     }
 
     public static void sendEmail(String subject, String msg_to_send, String receiver) {
+
+        init(props, "abcd", "abcd");
 
         temp = start + msg_to_send;
         finalstring = temp + temp2;

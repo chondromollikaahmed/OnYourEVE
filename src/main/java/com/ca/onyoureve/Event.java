@@ -160,7 +160,7 @@ public class Event
     public void bookEventWithInput(String cust_id) {
         this.inputInitialEventDetails();
 
-        EventDB eventDB = new EventDB();
+        DBEvent eventDB = new DBEvent();
 
         String venue_id = eventDB.selectVenue();
         String catering_id = eventDB.selectCateringService();
@@ -180,7 +180,7 @@ public class Event
     }
 
     public void bookEvent(String cust_id, String venue_id, String studio_id, String menu_id, String catering_id, String media_id) {
-        EventDB eventDB = new EventDB();
+        DBEvent eventDB = new DBEvent();
 
         bill.setMenu_cost(eventDB.getChosenMenuCost(menu_id));
         bill.setVenue_cost(eventDB.getChosenVenueCost(venue_id));
@@ -193,23 +193,23 @@ public class Event
     }
 
     public Event getEvent(String id, int IDtype) {
-        EventDB obj = new EventDB();
+        DBEvent obj = new DBEvent();
         return obj.getEvent(id, IDtype);
     }
 
     // all IDS associated with an event - customer id, venue id etc
     public HashMap<String, String> getEventIDs(String id, int IDtype) {
-        EventDB obj = new EventDB();
+        DBEvent obj = new DBEvent();
         return obj.getEventIDs(id, IDtype);
     }
 
     public ArrayList<Event> getListOfEvents() {
-        EventDB obj = new EventDB();
+        DBEvent obj = new DBEvent();
         return obj.getListOfEvents();
     }
 
     public void deleteEvent() {
-        EventDB obj = new EventDB();
+        DBEvent obj = new DBEvent();
         obj.removeEvent(this.event_id);
 
         HashMap<String, String> eventIDs = this.getEventIDs(this.event_id,0);
@@ -220,17 +220,17 @@ public class Event
         Media_RequirementsDB mediaObj = new Media_RequirementsDB();
         mediaObj.removeMediaRequirement(media_id);
 
-        MenuDB menuObj = new MenuDB();
+        DBMenu menuObj = new DBMenu();
         menuObj.removeMenu(menu_id);
     }
 
     public boolean isDateBooked() {
-        EventDB obj = new EventDB();
+        DBEvent obj = new DBEvent();
         return obj.isDateBooked(this.getDate());
     }
 
     public String getCustomerEmailByEventID(String id) {
-        EventDB obj = new EventDB();
+        DBEvent obj = new DBEvent();
         return obj.getCustomerEmailByEventID(id);
     }
 }

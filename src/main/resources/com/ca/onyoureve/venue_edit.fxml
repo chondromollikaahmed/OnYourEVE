@@ -3,11 +3,11 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
+
 <!--
   ~ /**
   ~  * Created by JehadurRE on 2/17/22, 8:20 AM
@@ -19,9 +19,7 @@
   ~  */
   -->
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="600.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/16"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.venue_edit_Controller">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ca.onyoureve.venue_edit_Controller">
    <content>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: black;">
          <children>
@@ -30,12 +28,12 @@
                   <Image url="@images/Manager_Edit_Venues.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="270.0" layoutY="-7.0" style="-fx-font-size: 120; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="EditVenues" textFill="WHITE" AnchorPane.topAnchor="-7.0">
+            <Label layoutX="270.0" layoutY="-7.0" style="-fx-font-size: 60;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="EditVenues" textFill="WHITE" AnchorPane.topAnchor="-7.0">
                <effect>
                   <DropShadow />
                </effect>
             </Label>
-            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="840.0" layoutY="19.0" onAction="#handleExitButton" ripplerFill="#d0d0d0" text="X" textFill="WHITE" AnchorPane.topAnchor="20.0">
+            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="840.0" layoutY="19.0" onAction="#handleExitButton" ripplerFill="#d0d0d0" text="<--" textFill="WHITE" AnchorPane.topAnchor="20.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -43,22 +41,7 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="162.0" layoutY="546.0" ripplerFill="#d0d0d0" text="Privacy Policy" textFill="WHITE">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="310.0" layoutY="546.0" ripplerFill="#d0d0d0" text="Terms of Use" textFill="WHITE">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
+
             <JFXButton buttonType="RAISED" layoutX="48.0" layoutY="547.0" ripplerFill="#d0d0d0" text="About Us" textFill="WHITE">
                <effect>
                   <DropShadow />
@@ -67,7 +50,7 @@
                   <Font size="19.0" />
                </font>
             </JFXButton>
-            <Label layoutX="535.0" layoutY="555.0" text="© 2020 All Rights Reserved" textFill="WHITE">
+            <Label layoutX="535.0" layoutY="555.0" text="© 2022 All Rights Reserved" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
@@ -78,7 +61,7 @@
             <AnchorPane layoutX="101.0" layoutY="138.0" prefHeight="373.0" prefWidth="179.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="70.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="373.0" opacity="0.49" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="225.0" AnchorPane.leftAnchor="0.0" />
-                  <Label alignment="CENTER" layoutX="67.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Venue" textFill="#430000">
+                  <Label alignment="CENTER" layoutX="67.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Venue   1" textFill="#430000">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -158,7 +141,7 @@
             <AnchorPane layoutX="338.0" layoutY="138.0" prefHeight="373.0" prefWidth="179.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="338.0" AnchorPane.rightAnchor="337.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="373.0" opacity="0.49" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="225.0" AnchorPane.leftAnchor="0.0" />
-                  <Label alignment="CENTER" layoutX="67.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Venue" textFill="#430000">
+                  <Label alignment="CENTER" layoutX="67.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Venue2" textFill="#430000">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -238,7 +221,7 @@
             <AnchorPane layoutX="615.0" layoutY="138.0" prefHeight="373.0" prefWidth="179.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="70.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="373.0" opacity="0.49" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="225.0" AnchorPane.leftAnchor="0.0" />
-                  <Label alignment="CENTER" layoutX="67.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Venue" textFill="#430000">
+                  <Label alignment="CENTER" layoutX="67.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Venue3" textFill="#430000">
                      <effect>
                         <DropShadow />
                      </effect>

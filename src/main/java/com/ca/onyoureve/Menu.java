@@ -170,12 +170,12 @@ public class Menu {
     }
 
     public Menu getMenu(String menu_id) {
-        MenuDB obj = new MenuDB();
+        DBMenu obj = new DBMenu();
         return obj.getMenu(menu_id);
     }
 
     public String addMenu() {
-        MenuDB obj = new MenuDB();
+        DBMenu obj = new DBMenu();
         String menu_id = obj.addMenu(this);
         return menu_id;
     }

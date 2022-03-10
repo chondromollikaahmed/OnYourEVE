@@ -125,7 +125,7 @@ public class Manager extends Employee
     /////////////////// CALLING VENUE DATABASE METHODS ////////////////////
 
     public void addVenue() {
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         obj.addVenue();
     }
 
@@ -135,7 +135,7 @@ public class Manager extends Employee
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
 
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         obj.deleteVenue(id);
     }
 
@@ -145,12 +145,12 @@ public class Manager extends Employee
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
 
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         obj.displayVenue(id);
     }
 
     public void viewAllVenues() {
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         obj.displayAllVenues();
     }
 
@@ -160,14 +160,14 @@ public class Manager extends Employee
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
 
-        VenueDB obj = new VenueDB();
+        DBVenue obj = new DBVenue();
         obj.editVenue(id);
     }
 
     ////////////////// CALLING STUDIO DATABASE METHODS ///////////////////
 
     public void addStudio() {
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         obj.addStudio();
     }
 
@@ -177,12 +177,12 @@ public class Manager extends Employee
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
 
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         obj.removeStudio(id);
     }
 
     public void viewAllStudios() {
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         obj.displayAllStudios();
     }
 
@@ -192,7 +192,7 @@ public class Manager extends Employee
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
 
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         obj.displayStudio(id);
     }
 
@@ -202,7 +202,7 @@ public class Manager extends Employee
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
 
-        StudioDB obj = new StudioDB();
+        DBStudio obj = new DBStudio();
         obj.editStudio(id);
     }
 
@@ -213,12 +213,12 @@ public class Manager extends Employee
         Scanner sc = new Scanner(System.in);
         String id = sc.nextLine();
 
-        MenuDB obj = new MenuDB();
+        DBMenu obj = new DBMenu();
         obj.displayMenu(id);
     }
 
     public void viewAllMenus() {
-        MenuDB obj = new MenuDB();
+        DBMenu obj = new DBMenu();
         obj.displayAllMenus();
     }
 
@@ -227,7 +227,7 @@ public class Manager extends Employee
         Scanner sc = new Scanner(System.in);
         String id = sc.nextLine();
 
-        MenuDB obj = new MenuDB();
+        DBMenu obj = new DBMenu();
         obj.removeMenu(id);
     }
 
@@ -325,7 +325,7 @@ public class Manager extends Employee
 
 
     public void approveEvent(String eventid) {
-        ManagerDB obj = new ManagerDB();
+        DBManager obj = new DBManager();
         obj.approveEvent(eventid);
     }
 }

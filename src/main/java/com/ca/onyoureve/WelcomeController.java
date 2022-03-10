@@ -242,8 +242,8 @@ public class WelcomeController implements Initializable {
 
         System.out.println("Sign in button pressed (Manager)");
 
-        String id = off_id.getText();
-        String password = off_pass.getText();
+        String id = man_id.getText();
+        String password = man_pass.getText();
 
         Employee emp = new Employee();
         boolean login = emp.employeeLogin(id, password);
@@ -262,7 +262,7 @@ public class WelcomeController implements Initializable {
                 LoggedUser.initEmp(id);
 
                 // send email
-                String msg = "You have just signed in to our system. If this was not you, then please contact us at chondromollikaahmed@gmail.com";
+                String msg = "You have just signed in to our system. If this was not you, then please contact us at chonromollikaahmed@gmail.com";
                 SendMail.sendEmail("Successful Login", msg, LoggedUser.getEmp().getEmail());
 
                 goToMgrMenu();
@@ -309,6 +309,8 @@ public class WelcomeController implements Initializable {
     @FXML
     public void btnCSignAction(ActionEvent actionEvent) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
+        System.out.println("Sign in button pressed");
+
         if (checkInputs(cus_id,cus_pass) == false) {
             System.out.println("Input check failed");
             return;
@@ -316,6 +318,9 @@ public class WelcomeController implements Initializable {
 
         String c_pass = cus_pass.getText();
         String c_idOrEmail = cus_id.getText();
+
+        System.out.println("ID/Email = " + c_idOrEmail);
+        System.out.println("Password = " + c_pass);
 
         Customer obj = new Customer();
         boolean login = obj.customerLogin(c_idOrEmail, c_pass);
@@ -330,8 +335,8 @@ public class WelcomeController implements Initializable {
             // store customer info
             LoggedUser.initCust(c_idOrEmail);
 
-            String msg = "You have just signed in to our system. If this was not you, then please contact us at chondromollikaahmed@gmail.com";
-            SendMail.sendEmail("Successful Login", msg, LoggedUser.getCust().getEmail());
+            String msg = "You have just signed in to our system. If this was not you, then please contact us at asheventshelp@gmail.com";
+            SendMail.sendEmail("Successful Login", msg, LoggedUser.getCust().getEmail_address());
 
             goToCustMenu();
         }
@@ -344,18 +349,18 @@ public class WelcomeController implements Initializable {
         System.out.println("Loading customer menu");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuCustomer.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("cust_menu.fxml"));
         Parent root = loader.load();
 
         //Get controller of cust menu scene
-        MenuCustomerController controller = loader.getController();
+        cust_menu_Controller controller = loader.getController();
 
         //setting information
         controller.setWelcome(LoggedUser.getCust().getName());
-        controller.setEventBookedStatus(LoggedUser.getCustomer_id());
+        controller.setEventBookedStatus(LoggedUser.getCust_id());
 
         // close current window
-        Stage stage = (Stage) customer_sin.getScene().getWindow();
+        Stage stage = (Stage) mgr_btn.getScene().getWindow();
         stage.close();
 
         // start new window for next scene
@@ -366,19 +371,19 @@ public class WelcomeController implements Initializable {
     }
 
 
-
+    // go to register screen
     public void goToRegister() throws IOException {
         System.out.println("Loading register window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("RegistrationCustomer.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("cust_register.fxml"));
         Parent root = loader.load();
 
         //Get controller of register scene
-        RegistrationCustomerController controller = loader.getController();
+        cust_register_Controller controller = loader.getController();
 
         // close current window
-        Stage window = (Stage) customer_sin.getScene().getWindow();
+        Stage window = (Stage) mgr_btn.getScene().getWindow();
         window.close();
 
         // start new window for main scene
@@ -394,6 +399,8 @@ public class WelcomeController implements Initializable {
         window.setTitle("Register Your Account");
         window.show();
     }
+
+
     @FXML
     public void btnOSignAction(ActionEvent actionEvent) {
 
@@ -418,4 +425,6 @@ public class WelcomeController implements Initializable {
         window.show();
 
     }
+
+    //find area of rectangle
 }
